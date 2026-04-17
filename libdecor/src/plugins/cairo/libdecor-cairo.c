@@ -26,7 +26,7 @@
 
 #include "config.h"
 
-#include <linux/input.h>
+#include "../../input-compat.h"
 #include <fcntl.h>
 #include <poll.h>
 #include <string.h>

@@ -33,7 +33,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#ifdef HAVE_MEMFD_CREATE
+#if defined(HAVE_MEMFD_CREATE) && !defined(__QNX__)
 #include <sys/mman.h>
 #endif
 
@@ -155,7 +155,7 @@ libdecor_os_create_anonymous_file(off_t size)
 	char *name;
 	int fd;
 
-#ifdef HAVE_MEMFD_CREATE
+#if defined(HAVE_MEMFD_CREATE) && !defined(__QNX__)
 	fd = memfd_create("libdecor", MFD_CLOEXEC | MFD_ALLOW_SEALING);
 	if (fd >= 0) {
 		/* We can add this seal before calling posix_fallocate(), as

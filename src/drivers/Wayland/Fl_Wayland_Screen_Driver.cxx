@@ -34,7 +34,7 @@
 #endif
 #include "../../print_button.h"
 #include <dlfcn.h>
-#include <linux/input.h>
+#include "../../../libdecor/src/input-compat.h"
 #include <stdlib.h>
 #include <xkbcommon/xkbcommon.h>
 #include <xkbcommon/xkbcommon-compose.h>
